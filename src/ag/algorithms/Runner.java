@@ -1,27 +1,38 @@
 package ag.algorithms;
 
+import ag.algorithms.Runner;
+import ag.algorithms.queue.LinkedQueue;
+import ag.algorithms.queue.StringQueueImplementable;
 import ag.algorithms.stack.ArrayStack;
 import ag.algorithms.stack.StringStackImplementable;
 import ag.algorithms.stack.LinkedStack;
 
 public class Runner {
 	
+	private static final String FIRST_STRING = "first";
+	private static final String SECOND_STRING = "second";
+	private static final String THIRD_STRING = "third";
+	private static final String FOURTH_STRING = "fourth";
+	
 	public static void main(String[] args) {
 		Runner runner = new Runner();
 		
-		// Stack package [FIFO -> First In First Out]
+		// Stack package [LIFO -> Last In First Out]
 		runner.runLinkedStack();
 		runner.runArrayStack();
+		
+		// Queue package [FIFO -> First In First Out]
+		runner.runLinkedQueue();
 	}
 	
 	
 	// Stack implementation: using private class emulate one-way linked elements
 	private void runLinkedStack() {
 		LinkedStack linkedStack = new LinkedStack();
-		linkedStack.push("first");
-		linkedStack.push("second");
-		linkedStack.push("third");
-		linkedStack.push("fourth");
+		linkedStack.push(FIRST_STRING);
+		linkedStack.push(SECOND_STRING);
+		linkedStack.push(THIRD_STRING);
+		linkedStack.push(FOURTH_STRING);
 		
 		printResultOfStackApiMethods(linkedStack);
 	}
@@ -29,12 +40,22 @@ public class Runner {
 	// Stack implementation: is used array for stack emulation
 	private void runArrayStack() {
 		ArrayStack arrayStack = new ArrayStack();
-		arrayStack.push("first");
-		arrayStack.push("second");
-		arrayStack.push("third");
-		arrayStack.push("fourth");
+		arrayStack.push(FIRST_STRING);
+		arrayStack.push(SECOND_STRING);
+		arrayStack.push(THIRD_STRING);
+		arrayStack.push(FOURTH_STRING);
 		
 		printResultOfStackApiMethods(arrayStack);
+	}
+	
+	private void runLinkedQueue() {
+		LinkedQueue queue = new LinkedQueue();
+		queue.enqueue(FIRST_STRING);
+		queue.enqueue(SECOND_STRING);
+		queue.enqueue(THIRD_STRING);
+		queue.enqueue(FOURTH_STRING);
+		
+		printResultOfQueueApiMethods(queue);
 	}
 	
 	private void printResultOfStackApiMethods(StringStackImplementable stack) {
@@ -45,6 +66,17 @@ public class Runner {
 		System.out.println("Pop 4: " + stack.pop());
 		
 		System.out.println("isEmpty: " + stack.isEmpty());
+		System.out.println("--------------------------");
+	}
+	
+	private void printResultOfQueueApiMethods(StringQueueImplementable queue) {
+		System.out.println("Instance: " + queue.getClass().getSimpleName());
+		System.out.println("Dequeue 1: " + queue.dequeue());
+		System.out.println("Dequeue 2: " + queue.dequeue());
+		System.out.println("Dequeue 3: " + queue.dequeue());
+		System.out.println("Dequeue 4: " + queue.dequeue());
+		
+		System.out.println("isEmpty: " + queue.isEmpty());
 		System.out.println("--------------------------");
 	}
 }
