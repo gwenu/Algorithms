@@ -2,6 +2,7 @@ package ag.algorithms;
 
 import ag.algorithms.queue.LinkedQueue;
 import ag.algorithms.queue.StringQueueImplementable;
+import ag.algorithms.sort.elementary.SelectionSort;
 import ag.algorithms.stack.ArrayStack;
 import ag.algorithms.stack.LinkedStack;
 import ag.algorithms.stack.StringStackImplementable;
@@ -22,6 +23,9 @@ public class Runner {
 		
 		// Queue package [FIFO -> First In First Out]
 		runner.runLinkedQueue();
+		
+		// Selection sort
+		runner.runSelectionSort();
 	}
 	
 	
@@ -55,6 +59,21 @@ public class Runner {
 		queue.enqueue(FOURTH_STRING);
 		
 		printResultOfQueueApiMethods(queue);
+	}
+	
+	private void runSelectionSort() {
+		Double[] elements = {2.5, 1.2, 4.4};
+		
+		SelectionSort<Double> selectionSort = new SelectionSort<Double>(elements);
+		selectionSort.sort();
+		
+		System.out.println("Sorted array: ");
+		
+		for(Double element : elements) {
+			System.out.println(element.doubleValue());
+		}
+		
+		System.out.println("--------------------------");
 	}
 	
 	private void printResultOfStackApiMethods(StringStackImplementable stack) {
