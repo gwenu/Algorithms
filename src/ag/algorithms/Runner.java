@@ -2,6 +2,7 @@ package ag.algorithms;
 
 import ag.algorithms.queue.LinkedQueue;
 import ag.algorithms.queue.StringQueueImplementable;
+import ag.algorithms.sort.elementary.InsertionSort;
 import ag.algorithms.sort.elementary.SelectionSort;
 import ag.algorithms.stack.ArrayStack;
 import ag.algorithms.stack.LinkedStack;
@@ -24,8 +25,9 @@ public class Runner {
 		// Queue package [FIFO -> First In First Out]
 		runner.runLinkedQueue();
 		
-		// Selection sort
+		// Elementary sorts
 		runner.runSelectionSort();
+		runner.runInsertionSort();
 	}
 	
 	
@@ -62,12 +64,27 @@ public class Runner {
 	}
 	
 	private void runSelectionSort() {
-		Double[] elements = {2.5, 1.2, 4.4};
+		Double[] elements = {2.5, 1.2, 4.4, 2.2, 5.1};
 		
-		SelectionSort<Double> selectionSort = new SelectionSort<Double>(elements);
-		selectionSort.sort();
+		SelectionSort<Double> selectionSort = new SelectionSort<Double>();
+		selectionSort.sort(elements);
 		
-		System.out.println("Sorted array: ");
+		System.out.println("[Selection Sort] Sorted array: ");
+		
+		for(Double element : elements) {
+			System.out.println(element.doubleValue());
+		}
+		
+		System.out.println("--------------------------");
+	}
+	
+	private void runInsertionSort() {
+		Double[] elements = {2.5, 1.2, 4.4, 2.2, 5.1};
+		
+		InsertionSort<Double> selectionSort = new InsertionSort<Double>();
+		selectionSort.sort(elements);
+		
+		System.out.println("[Insertion Sort] Sorted array: ");
 		
 		for(Double element : elements) {
 			System.out.println(element.doubleValue());
