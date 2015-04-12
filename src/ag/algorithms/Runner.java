@@ -3,7 +3,9 @@ package ag.algorithms;
 import ag.algorithms.queue.LinkedQueue;
 import ag.algorithms.queue.StringQueueImplementable;
 import ag.algorithms.sort.InsertionSort;
+import ag.algorithms.sort.MergeSort;
 import ag.algorithms.sort.SelectionSort;
+import ag.algorithms.sort.ShellSort;
 import ag.algorithms.stack.ArrayStack;
 import ag.algorithms.stack.LinkedStack;
 import ag.algorithms.stack.StringStackImplementable;
@@ -29,6 +31,7 @@ public class Runner {
 		runner.runSelectionSort();
 		runner.runInsertionSort();
 		runner.runShellSort();
+		runner.runMergeSort();
 	}
 
 	// Stack implementation: using private class emulate one-way linked elements
@@ -96,10 +99,25 @@ public class Runner {
 	private void runShellSort() {
 		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
 
-		InsertionSort<Double> selectionSort = new InsertionSort<Double>();
+		ShellSort<Double> selectionSort = new ShellSort<Double>();
 		selectionSort.sort(elements);
 
 		System.out.println("[Shell Sort] Sorted array: ");
+
+		for (Double element : elements) {
+			System.out.println(element.doubleValue());
+		}
+
+		System.out.println("--------------------------");
+	}
+	
+	private void runMergeSort() {
+		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
+
+		MergeSort<Double> selectionSort = new MergeSort<Double>();
+		selectionSort.sort(elements, 0, 4);
+
+		System.out.println("[Merge Sort] Sorted array: ");
 
 		for (Double element : elements) {
 			System.out.println(element.doubleValue());
