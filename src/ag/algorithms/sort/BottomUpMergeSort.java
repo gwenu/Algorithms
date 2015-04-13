@@ -9,8 +9,11 @@ public class BottomUpMergeSort<T extends Comparable<T>> {
 		
 		for(int i = 1; i < arrayLength; i = i + i) {
 			for(int j = 0; j < arrayLength; j += i + i) {
-				if(j + i - 1 < Math.min(j + i + i -1, arrayLength - 1)) {
-					merge(elements, j, j + i - 1, Math.min(j + i + i -1, arrayLength - 1));
+				int mid = j + i - 1;
+				int last = Math.min(j + i + i -1, arrayLength - 1);
+				
+				if(mid < last) {
+					merge(elements, j, mid, last);
 				}
 			}
 		}

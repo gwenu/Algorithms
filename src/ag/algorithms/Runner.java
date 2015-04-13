@@ -74,28 +74,18 @@ public class Runner {
 		SelectionSort<Double> selectionSort = new SelectionSort<Double>();
 		selectionSort.sort(elements);
 
-		System.out.println("[Selection Sort] Sorted array: ");
-
-		for (Double element : elements) {
-			System.out.println(element.doubleValue());
-		}
-
-		System.out.println("--------------------------");
+		printResultOfSortAlgorithms("[Selection Sort] Sorted array: ", elements);
 	}
+	
+	
 
 	private void runInsertionSort() {
 		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
 
 		InsertionSort<Double> selectionSort = new InsertionSort<Double>();
 		selectionSort.sort(elements);
-
-		System.out.println("[Insertion Sort] Sorted array: ");
-
-		for (Double element : elements) {
-			System.out.println(element.doubleValue());
-		}
-
-		System.out.println("--------------------------");
+		
+		printResultOfSortAlgorithms("[Insertion Sort] Sorted array: ", elements);
 	}
 
 	private void runShellSort() {
@@ -103,14 +93,8 @@ public class Runner {
 
 		ShellSort<Double> selectionSort = new ShellSort<Double>();
 		selectionSort.sort(elements);
-
-		System.out.println("[Shell Sort] Sorted array: ");
-
-		for (Double element : elements) {
-			System.out.println(element.doubleValue());
-		}
-
-		System.out.println("--------------------------");
+		
+		printResultOfSortAlgorithms("[Shell Sort] Sorted array: ", elements);
 	}
 	
 	private void runMergeSort() {
@@ -118,14 +102,8 @@ public class Runner {
 
 		MergeSort<Double> selectionSort = new MergeSort<Double>();
 		selectionSort.sort(elements, 0, 4);
-
-		System.out.println("[Merge Sort] Sorted array: ");
-
-		for (Double element : elements) {
-			System.out.println(element.doubleValue());
-		}
-
-		System.out.println("--------------------------");
+		
+		printResultOfSortAlgorithms("[Merge Sort] Sorted array: ", elements);
 	}
 	
 	private void runBottomUpMergeSort() {
@@ -133,14 +111,8 @@ public class Runner {
 
 		BottomUpMergeSort<Double> selectionSort = new BottomUpMergeSort<Double>();
 		selectionSort.sort(elements, 0, 4);
-
-		System.out.println("[BottomUp Merge Sort] Sorted array: ");
-
-		for (Double element : elements) {
-			System.out.println(element.doubleValue());
-		}
-
-		System.out.println("--------------------------");
+		
+		printResultOfSortAlgorithms("[BottomUp Merge Sort] Sorted array: ", elements);
 	}
 
 	private void printResultOfStackApiMethods(StringStackImplementable stack) {
@@ -162,6 +134,17 @@ public class Runner {
 		System.out.println("Dequeue 4: " + queue.dequeue());
 
 		System.out.println("isEmpty: " + queue.isEmpty());
+		System.out.println("--------------------------");
+	}
+	
+	@SuppressWarnings("unchecked")
+	private <T> void printResultOfSortAlgorithms(String sortTitle, Comparable<T>[] elements) {
+		System.out.println(sortTitle);
+
+		for (Comparable<T> element : elements) {
+			System.out.println(((T) element));
+		}
+
 		System.out.println("--------------------------");
 	}
 }
