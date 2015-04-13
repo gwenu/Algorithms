@@ -2,6 +2,7 @@ package ag.algorithms;
 
 import ag.algorithms.queue.LinkedQueue;
 import ag.algorithms.queue.StringQueueImplementable;
+import ag.algorithms.sort.BottomUpMergeSort;
 import ag.algorithms.sort.InsertionSort;
 import ag.algorithms.sort.MergeSort;
 import ag.algorithms.sort.SelectionSort;
@@ -32,6 +33,7 @@ public class Runner {
 		runner.runInsertionSort();
 		runner.runShellSort();
 		runner.runMergeSort();
+		runner.runBottomUpMergeSort();
 	}
 
 	// Stack implementation: using private class emulate one-way linked elements
@@ -118,6 +120,21 @@ public class Runner {
 		selectionSort.sort(elements, 0, 4);
 
 		System.out.println("[Merge Sort] Sorted array: ");
+
+		for (Double element : elements) {
+			System.out.println(element.doubleValue());
+		}
+
+		System.out.println("--------------------------");
+	}
+	
+	private void runBottomUpMergeSort() {
+		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
+
+		BottomUpMergeSort<Double> selectionSort = new BottomUpMergeSort<Double>();
+		selectionSort.sort(elements, 0, 4);
+
+		System.out.println("[BottomUp Merge Sort] Sorted array: ");
 
 		for (Double element : elements) {
 			System.out.println(element.doubleValue());

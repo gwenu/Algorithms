@@ -1,23 +1,18 @@
 package ag.algorithms.sort;
 
-// N log N
-public class MergeSort<T extends Comparable<T>> {
+//N log N
+// No recursion
+public class BottomUpMergeSort<T extends Comparable<T>> {
 	
-	private Comparable<T>[] array;
-
 	public void sort(Comparable<T>[] elements, int firstElement, int lastElement) {
-		this.array = elements;
-		doMergeSort(firstElement, lastElement);
-	}
-
-	private void doMergeSort(int firstElement, int lastElement) {
-		if (firstElement < lastElement) {
-			int midElement = firstElement + (lastElement - firstElement) / 2;
-			
-			doMergeSort(firstElement, midElement);
-			doMergeSort(midElement + 1, lastElement);
-			
-			merge(array, firstElement, midElement, lastElement);
+		int arrayLength = elements.length;
+		
+		for(int i = 1; i < arrayLength; i = i + i) {
+			for(int j = 0; j < arrayLength; j += i + i) {
+				if(j + i - 1 < Math.min(j + i + i -1, arrayLength - 1)) {
+					merge(elements, j, j + i - 1, Math.min(j + i + i -1, arrayLength - 1));
+				}
+			}
 		}
 	}
 
