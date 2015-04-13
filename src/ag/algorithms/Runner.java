@@ -5,6 +5,7 @@ import ag.algorithms.queue.StringQueueImplementable;
 import ag.algorithms.sort.BottomUpMergeSort;
 import ag.algorithms.sort.InsertionSort;
 import ag.algorithms.sort.MergeSort;
+import ag.algorithms.sort.QuickSort;
 import ag.algorithms.sort.SelectionSort;
 import ag.algorithms.sort.ShellSort;
 import ag.algorithms.stack.ArrayStack;
@@ -34,6 +35,7 @@ public class Runner {
 		runner.runShellSort();
 		runner.runMergeSort();
 		runner.runBottomUpMergeSort();
+		runner.runQuickSort();
 	}
 
 	// Stack implementation: using private class emulate one-way linked elements
@@ -76,14 +78,12 @@ public class Runner {
 
 		printResultOfSortAlgorithms("[Selection Sort] Sorted array: ", elements);
 	}
-	
-	
 
 	private void runInsertionSort() {
 		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
 
-		InsertionSort<Double> selectionSort = new InsertionSort<Double>();
-		selectionSort.sort(elements);
+		InsertionSort<Double> insertionSort = new InsertionSort<Double>();
+		insertionSort.sort(elements);
 		
 		printResultOfSortAlgorithms("[Insertion Sort] Sorted array: ", elements);
 	}
@@ -91,8 +91,8 @@ public class Runner {
 	private void runShellSort() {
 		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
 
-		ShellSort<Double> selectionSort = new ShellSort<Double>();
-		selectionSort.sort(elements);
+		ShellSort<Double> shellSort = new ShellSort<Double>();
+		shellSort.sort(elements);
 		
 		printResultOfSortAlgorithms("[Shell Sort] Sorted array: ", elements);
 	}
@@ -100,8 +100,8 @@ public class Runner {
 	private void runMergeSort() {
 		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
 
-		MergeSort<Double> selectionSort = new MergeSort<Double>();
-		selectionSort.sort(elements, 0, 4);
+		MergeSort<Double> mergeSort = new MergeSort<Double>();
+		mergeSort.sort(elements, 0, 4);
 		
 		printResultOfSortAlgorithms("[Merge Sort] Sorted array: ", elements);
 	}
@@ -109,10 +109,19 @@ public class Runner {
 	private void runBottomUpMergeSort() {
 		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
 
-		BottomUpMergeSort<Double> selectionSort = new BottomUpMergeSort<Double>();
-		selectionSort.sort(elements, 0, 4);
+		BottomUpMergeSort<Double> bottomUpSort = new BottomUpMergeSort<Double>();
+		bottomUpSort.sort(elements, 0, 4);
 		
 		printResultOfSortAlgorithms("[BottomUp Merge Sort] Sorted array: ", elements);
+	}
+
+	private void runQuickSort() {
+		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
+
+		QuickSort<Double> quickSort = new QuickSort<Double>();
+		quickSort.sort(elements);
+		
+		printResultOfSortAlgorithms("[Quick Sort] Sorted array: ", elements);
 	}
 
 	private void printResultOfStackApiMethods(StringStackImplementable stack) {
