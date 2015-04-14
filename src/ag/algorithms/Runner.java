@@ -4,6 +4,7 @@ import ag.algorithms.heap.BinaryHeap;
 import ag.algorithms.queue.LinkedQueue;
 import ag.algorithms.queue.StringQueueImplementable;
 import ag.algorithms.sort.BottomUpMergeSort;
+import ag.algorithms.sort.HeapSort;
 import ag.algorithms.sort.InsertionSort;
 import ag.algorithms.sort.MergeSort;
 import ag.algorithms.sort.QuickSort;
@@ -37,6 +38,7 @@ public class Runner {
 		runner.runMergeSort();
 		runner.runBottomUpMergeSort();
 		runner.runQuickSort();
+		runner.runHeapSort();
 		
 		// Binary Heap
 		runner.runBinaryHeap();
@@ -126,6 +128,15 @@ public class Runner {
 		quickSort.sort(elements);
 		
 		printResultOfSortAlgorithms("[Quick Sort] Sorted array: ", elements);
+	}
+	
+	private void runHeapSort() {
+		Double[] elements = { 2.5, 1.2, 4.4, 2.2, 5.1 };
+
+		HeapSort<Double> heapSort = new HeapSort<Double>();
+		heapSort.sort(elements);
+		
+		printResultOfSortAlgorithms("[Heap Sort] Sorted array: ", elements);
 	}
 	
 	private void runBinaryHeap() {

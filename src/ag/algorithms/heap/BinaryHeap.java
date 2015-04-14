@@ -40,6 +40,18 @@ public class BinaryHeap<Key extends Comparable<Key>> {
 		return lastElement;
 	}
  
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		
+		for (Key element : heap) {
+			if (element != null)
+				sb.append(element + " ");
+		}
+		
+		return sb.toString();
+	}
+	
 	private void swim(int k) {
 		int parentIndex = k / 2;
 		
@@ -78,17 +90,5 @@ public class BinaryHeap<Key extends Comparable<Key>> {
 		} 
 		
 		return firstChild >= lastElement ? k : firstChild;
-	}
-	
-	@Override
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-
-		for (Key element : heap) {
-			if (element != null)
-				sb.append(element + " ");
-		}
-
-		return sb.toString();
 	}
 }
