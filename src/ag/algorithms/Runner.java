@@ -1,5 +1,6 @@
 package ag.algorithms;
 
+import ag.algorithms.heap.BinaryHeap;
 import ag.algorithms.queue.LinkedQueue;
 import ag.algorithms.queue.StringQueueImplementable;
 import ag.algorithms.sort.BottomUpMergeSort;
@@ -36,6 +37,9 @@ public class Runner {
 		runner.runMergeSort();
 		runner.runBottomUpMergeSort();
 		runner.runQuickSort();
+		
+		// Binary Heap
+		runner.runBinaryHeap();
 	}
 
 	// Stack implementation: using private class emulate one-way linked elements
@@ -122,6 +126,35 @@ public class Runner {
 		quickSort.sort(elements);
 		
 		printResultOfSortAlgorithms("[Quick Sort] Sorted array: ", elements);
+	}
+	
+	private void runBinaryHeap() {
+		Integer[] elements = { 5, 1, 4, 8, 12, 3 };
+		BinaryHeap<Integer> binaryHeap = new BinaryHeap<>(new Integer[10], 10);
+		binaryHeap.insert(elements[0]);
+		binaryHeap.insert(elements[1]);
+		binaryHeap.insert(elements[2]);
+		binaryHeap.insert(elements[3]);
+		binaryHeap.insert(elements[4]);
+		binaryHeap.insert(elements[5]);
+		
+		System.out.println("Binary heap: ");
+		System.out.println(binaryHeap.toString());
+		System.out.println("\nAfter delete max item: ");
+		
+		binaryHeap.deleteMax();
+		System.out.println(binaryHeap.toString());
+		
+		System.out.println("\nAfter 2 delete max item: ");
+		
+		binaryHeap.deleteMax();
+		System.out.println(binaryHeap.toString());
+		
+		System.out.println("\nAfter 3 delete max item: ");
+		
+		binaryHeap.deleteMax();
+		System.out.println(binaryHeap.toString());
+		System.out.println("--------------------------");
 	}
 
 	private void printResultOfStackApiMethods(StringStackImplementable stack) {
