@@ -1,5 +1,6 @@
 package ag.algorithms;
 
+import ag.algorithms.hash.HashFunction;
 import ag.algorithms.heap.BinaryHeap;
 import ag.algorithms.queue.LinkedQueue;
 import ag.algorithms.queue.StringQueueImplementable;
@@ -42,6 +43,9 @@ public class Runner {
 		
 		// Binary Heap
 		runner.runBinaryHeap();
+		
+		// Hash function
+		runner.runHashFunction();
 	}
 
 	// Stack implementation: using private class emulate one-way linked elements
@@ -165,6 +169,19 @@ public class Runner {
 		
 		binaryHeap.deleteMax();
 		System.out.println(binaryHeap.toString());
+		System.out.println("--------------------------");
+	}
+	
+	private void runHashFunction() {
+		double[] array = {2.2, 11.8, 17.4};
+		
+		HashFunction first = new HashFunction(2, "some1", null, array);
+		HashFunction second = new HashFunction(59, "some2", null, array);
+		HashFunction third = new HashFunction(2, "some1", null, array);
+		
+		System.out.println("First hash: " + first.hashcode() 
+				+ "\nSecond hash: " + second.hashcode() 
+				+ "\nThird hash: " + third.hashcode());
 		System.out.println("--------------------------");
 	}
 
