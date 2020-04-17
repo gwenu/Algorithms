@@ -1,10 +1,10 @@
 package ag.algorithms.leetcode;
 
-public class MergeIntervalsArrayImpl {
+public class MergeIntervalsArray {
 
 	private int[][] intervals;
 
-	public MergeIntervalsArrayImpl(int[][] intervals) {
+	public MergeIntervalsArray(int[][] intervals) {
 		this.intervals = intervals;
 	}
 
