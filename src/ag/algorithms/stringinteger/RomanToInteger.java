@@ -1,9 +1,9 @@
-package leetcode;
+package ag.algorithms.stringinteger;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RomantoInteger {
+public class RomanToInteger {
 
 	@SuppressWarnings("serial")
 	Map<String, Integer> romanToInteger = new HashMap<String, Integer>() {
@@ -20,7 +20,7 @@ public class RomantoInteger {
 	};
 
 	public static void main(String[] args) {
-		RomantoInteger instance = new RomantoInteger();
+		RomanToInteger instance = new RomanToInteger();
 
 		String romanDigits = "LVIII";
 		System.out.println(instance.romanToInt(romanDigits));

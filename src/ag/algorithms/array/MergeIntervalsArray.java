@@ -1,4 +1,4 @@
-package ag.algorithms.leetcode;
+package ag.algorithms.array;
 
 public class MergeIntervalsArray {
 

@@ -1,6 +1,6 @@
 package ag.algorithms;
 
-import ag.algorithms.leetcode.MergeIntervalsArrayImpl;
+import ag.algorithms.array.MergeIntervalsArray;
 
 public class LeetCodeRunner {
 
@@ -14,7 +14,7 @@ public class LeetCodeRunner {
 		System.out.println("Using array implementation for merge intervals:\nIntervals:");
 		printArray(intervals);
 		
-		MergeIntervalsArrayImpl mergeIntervals = new MergeIntervalsArrayImpl(intervals);
+		MergeIntervalsArray mergeIntervals = new MergeIntervalsArray(intervals);
 		intervals = mergeIntervals.perform();
 
 		System.out.println("\n\nMerge intervals result:");

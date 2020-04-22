@@ -1,4 +1,4 @@
-package leetcode;
+package ag.algorithms.stringinteger;
 
 public class LongestSubstring {
 
